@@ -1,5 +1,6 @@
 # Zad 1
 # gotowe
+# cd wd_cw08_30-04-2020/
 import pandas as pd
 import xlrd
 import openpyxl
