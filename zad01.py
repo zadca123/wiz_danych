@@ -1,5 +1,10 @@
-#Zad 1
-lista = [x for x in range(4,40,4)]
-plik=open("zadanie1.txt","w")
-plik.writelines(str(lista))
-plik.close()
+# Zad 1
+# gotowe
+# cd wd_cw08_30-04-2020/
+import pandas as pd
+import xlrd
+import openpyxl
+
+a = pd.read_excel('imiona.xlsx')    # Rok, Imie, Liczba, Plec
+df=pd.DataFrame(a,columns=['Rok','Imie','Liczba','Plec'])
+print(df)
