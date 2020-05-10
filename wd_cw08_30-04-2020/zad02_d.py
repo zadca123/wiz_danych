@@ -5,7 +5,7 @@ import pandas as pd
 import xlrd
 import openpyxl
 
-x = pd.read_excel('imiona.xlsx')    # Rok, Imie, Liczba, Plec
+x = pd.read_excel('imiona.xlsx',delimiter=';')    # Rok, Imie, Liczba, Plec
 
 df = pd.DataFrame(x,columns=['Rok','Imie','Liczba','Plec'])
 
@@ -19,5 +19,7 @@ df = pd.DataFrame(x,columns=['Rok','Imie','Liczba','Plec'])
 
 
 # print(df.groupby(['Liczba']).agg({'Liczba':['sum']}))
-
-print((df.groupby(['Liczba']).agg({'Liczba2':['sum']})) & (df['Rok'] <= 2005 ))
+a = df['Rok'] <=2005
+# b = df.groupby((['Rok']).agg({'Liczba':['sum']}))
+c = df.groupby
+print(df[a])
