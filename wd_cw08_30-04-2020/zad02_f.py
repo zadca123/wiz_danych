@@ -8,19 +8,11 @@ import openpyxl
 
 x = pd.read_excel('imiona.xlsx')    # Rok, Imie, Liczba, Plec
 df = pd.DataFrame(x,columns=['Rok','Imie','Liczba','Plec'])
+mask_d = df[df['Plec'] == 'K']
+mask_c = df[df['Plec'] == 'M']
+mask2_d = mask_d.sort_values(by='Liczba', ascending=False)
+mask2_c = mask_c.sort_values(by='Liczba', ascending=False)
 
-# gr_plec = df.groupby(['Plec'])
-# gr_liczba = df.groupby(['Liczba'])
-# gr_rok = df.groupby(['Rok'])
-# a = df.loc[[0,1], ['Liczba']] 
-# # print(a)
-# # print(df.inc.sort_values(by=['Liczba','Rok'],ascending=[False,True]), a) 
-# print(df)
-mask = df.groupby(['Rok']).agg('idxmax')
-a = df.loc[(df['Liczba'] == np.max), 'Imie']
-print(mask)
-
-
-
-
-
+print('Urodzenia chlopcow','\n',mask2_c.groupby(['Rok']).agg({'Liczba':['sum']}))
+print('\n')
+print('Urodzenia dziewczynek','\n',mask2_d.groupby(['Rok']).agg({'Liczba':['sum']}))
