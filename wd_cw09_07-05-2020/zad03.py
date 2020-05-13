@@ -1,5 +1,5 @@
 # Zad 3
-# niegotowe ?
+# gotowe
 # cd wd_cw09_07-05-2020/
 
 import pandas as pd
@@ -13,7 +13,7 @@ df = pd.DataFrame(x,columns=['Rok','Imie','Liczba','Plec'])
 print(df)
 
 grupa = df.groupby(['Plec']).agg({'Liczba':['sum']})
-wykres = grupa.plot.pie(subplots=True, autopct='%f % %', fontsize=20, figsize=(6, 6))
+wykres = grupa.plot.pie(subplots=True, autopct='%0.2f %%', fontsize=20, figsize=(6, 6))
 plt.title('ilosc urodzonych chłopców i dziewczynek w ostatnich 5 latach')
 plt.show()
 
